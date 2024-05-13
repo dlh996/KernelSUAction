@@ -40,6 +40,7 @@ jobs:
     - name: Setup Configuration for Kernel
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
+        echo "CONFIG_KPROBES=y" >> arch/arm64/configs/vendor/sm8250_defconfig
         echo "CONFIG_HAVE_KPROBES=y" >> arch/arm64/configs/vendor/sm8250_defconfig
         echo "CONFIG_KPROBE_EVENTS=y" >> arch/arm64/configs/vendor/sm8250_defconfig
 
